@@ -8,8 +8,9 @@ export type ProductDescription = {
 export type Product = {
     id: number
     name: string
-    description?: ProductDescription[]
     price: number,
-    images?:string[]
+
     section: ProductSection
+    description?: ProductDescription[]
+    image?:string
 }

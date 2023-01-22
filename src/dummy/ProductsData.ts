@@ -5,7 +5,7 @@ export const products: Array<Product> = [
         id: 0,
         name: "My Christmas pack",
         price: 71.20,
-        section: "drinkware",
+        section: "packaging",
         description: [
             {
                 text: "Cardboard box",
@@ -19,30 +19,35 @@ export const products: Array<Product> = [
                 text: "Basic bottle",
                 tags: ["Blue"]
             }
-        ]
+        ],
+        image: "https://dummyimage.com/200x200/E6E8E9/a2a"
     },
     {
         id:1,
         name: "Basic T-Shirt",
         price: 13.5,
-        section: "packaging"
+        section: "backpacks",
+        image: "https://dummyimage.com/200x200/E6E8E9/aa1"
     },
     {
         id:2,
         name: "Woman bottle",
         price: 36.5,
-        section: "drinkware"
+        section: "drinkware",
+        image: "https://dummyimage.com/200x200/E6E8E9/aa2"
     },
     {
         id:3,
         name: "Unisex Short Sleeve T-Shirt",
         price: 12.5,
-        section: "apparel"
+        section: "apparel",
+        image: "https://dummyimage.com/200x200/E6E8E9/a2f"
     },
     {
         id:4,
         name: "Unisex Short Sleeve T-Shirt",
         price: 25,
-        section: "packaging"
+        section: "packaging",
+        image: "https://dummyimage.com/200x200/E6E8E9/fca"
     }
 ]

@@ -115,8 +115,9 @@ const Footer = React.forwardRef<any, BoxProps>(({...props}, ref) => {
                     <Typography>{`© ${new Date().getFullYear()} Customer Products. All rights reserved.`}</Typography>
                 </Grid>
 
-                <Grid item xs={12} md={6} sx={{display: "flex", justifyContent: {xs: "flex-start", md: "flex-end"}}}>
-                    <Stack direction="row" alignItems="center">
+                <Grid item container xs={12} md={6} sx={{display: "flex", justifyContent: {xs: "flex-start", md: "flex-end"}}}>
+
+                    <Grid item>
                         <Stack direction="row" alignItems="center">
                             <Typography>Region:</Typography>
                             <Stack direction="row" alignItems="center" sx={{mx: 1}}
@@ -128,6 +129,8 @@ const Footer = React.forwardRef<any, BoxProps>(({...props}, ref) => {
 
                             </Stack>
                         </Stack>
+                    </Grid>
+                    <Grid item>
                         <Stack direction="row" alignItems="center">
                             <Typography>Language:</Typography>
                             <Stack direction="row" alignItems="center" onClick={() => toggleOpen("lang")}>
@@ -137,8 +140,11 @@ const Footer = React.forwardRef<any, BoxProps>(({...props}, ref) => {
                             </Stack>
                         </Stack>
 
+                    </Grid>
+                    {/*<Stack direction="row" alignItems="center">
 
-                    </Stack>
+
+                    </Stack>*/}
                 </Grid>
             </Grid>
         </StyledBox>

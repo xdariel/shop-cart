@@ -1,5 +1,6 @@
 import {createContext} from "react"
 import {Product, ProductSection} from "@/models/Product";
+import {defaultCart} from "@/dummy/CheckoutData";
 
 export type ProductFilterSection = ProductSection | "all"
 
@@ -30,7 +31,7 @@ export const INITIAL_STATE: ShopContextState = {
         section: "all",
         query: ""
     },
-    cart: new Array<CartItem>()
+    cart: defaultCart
 } as ShopContextState
 
 export const ShopContext = createContext<ShopContextState>(INITIAL_STATE)

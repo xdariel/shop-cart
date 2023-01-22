@@ -12,6 +12,7 @@ type ShopContextAction =
     | { type: 'cleanFilter' }
 export const ShopReducer = (state: ShopContextState, action: ShopContextAction): ShopContextState => {
     let i = -1;
+    let item = undefined
     let cart:CartItem[] = []
     switch (action.type) {
         case 'setQuery':
@@ -49,11 +50,17 @@ export const ShopReducer = (state: ShopContextState, action: ShopContextAction):
             };
 
         case 'setCartItemQuantity':
-             i = state.cart.indexOf(action.payload)
-             cart = [...state.cart]
-            if (i + 1 > 0) {
-                cart[i].quantity = action.payload.quantity
-            }
+            cart = [...state.cart]
+             cart.find((x, index)=>{
+                 if(x.product.id === action.payload.product.id){
+                     i = index
+                     return true
+                 }
+                 return false
+                })
+                if (i + 1 > 0) {
+                    cart[i].quantity = action.payload.quantity
+                }
             return {
                 ...state,
                 cart
