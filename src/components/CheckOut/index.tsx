@@ -32,11 +32,15 @@ const CheckOut: React.FC = () => {
                                     sx={{ml: 1, color: "text.disabled"}}>{`(${cart.length})`}</Typography>
                     </Stack>
 
-                    <Box>
+                    {cart.length > 0 && <Box>
                         {cart.map((item, i) => {
                             return (<CheckOutItem key={i} item={item}/>)
                         })}
-                    </Box>
+                    </Box>}
+
+                    {cart.length ===0 && <Box>
+                         <Typography variant="h6" sx={{fontWeight: "bold"}}>No items in the shopping cart</Typography>
+                    </Box>}
 
 
                 </Grid>
@@ -52,7 +56,7 @@ const CheckOut: React.FC = () => {
                     <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{mb: 3}}>
                         <Typography sx={{fontWeight: "bold"}}>Total:</Typography>
                         <Typography sx={{fontWeight: "bold"}}
-                                    variant="h6">{`$${Number(cart.map(x => x.quantity * x.product.price).reduce((a, b) => a + b)).toLocaleString("en-EN")}`}</Typography>
+                                    variant="h6">{`$${ cart && cart.length > 0 ? Number(cart.map(x => x.quantity * x.product.price).reduce((a, b) => a + b)).toLocaleString("en-EN"): 0}`}</Typography>
                     </Stack>
                     <StyledButton fullWidth variant={"contained"} sx={{mb:1}} >Proceed to Checkout</StyledButton>
                     <StyledButton fullWidth variant={"outlined"} >Continue shopping</StyledButton>
