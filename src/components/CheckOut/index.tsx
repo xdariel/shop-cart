@@ -39,7 +39,7 @@ const CheckOut: React.FC = () => {
                     </Box>}
 
                     {cart.length ===0 && <Box>
-                         <Typography variant="h6" sx={{fontWeight: "bold"}}>No items in the shopping cart</Typography>
+                         <Typography variant="h6" sx={{fontWeight: "bold"}}>No items in the shopping cart!</Typography>
                     </Box>}
 
 
