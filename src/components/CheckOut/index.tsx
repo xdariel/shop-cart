@@ -24,7 +24,7 @@ const CheckOut: React.FC = () => {
     }
     return (
         <Box sx={{mb:2}}>
-            <Grid container sx={{my: 4}} columnSpacing={2}>
+            <Grid container sx={{my: 4}} columnSpacing={4}>
                 <Grid item xs={12} md={9}>
                     <Stack direction="row" alignItems="flex-end" sx={{mb: 2}}>
                         <Typography variant="h5" sx={{fontWeight: 900}}>Your Cart</Typography>

@@ -29,7 +29,7 @@ const Header = React.forwardRef<any, AppBarProps>(({ ...props }, ref) => {
     return (
         <StyledAppBar ref={ref} {...props}>
             <Logo />
-            <Grid container sx={{ml:{xs:2, md:4}}}>
+            <Grid container sx={{ml:{xs:2, sm:4, md:8}}}>
 
                 <Grid item md={6} sx={{alignItems: "center", display: {xs: "none", md: "flex"}}} >
                     <SearchField value={query} onChange={onSearch} size="small" placeholder={"Search products"} fullWidth />

@@ -12,11 +12,11 @@ const StyledBox = styled(Box)<BoxProps>(({theme}) => ({
     },
 }))
 
-const StyledGridItem = styled(Grid)<GridProps>(({theme}) => ({
+const StyledGridItem = styled(Grid)<GridProps>(() => ({
     "&.MuiGrid-root": {
         display: "flex",
         alignItems: "center",
-        marginRight: "32px"
+        marginRight: "24px"
     },
 }))
 
@@ -64,7 +64,7 @@ const ProductFilter = React.forwardRef<any, BoxProps>(({...props}, ref) => {
                         const isSelected = item.id === selected.id
                         return (<StyledGridItem item key={item.id} onClick={() => setSelected(item)}>
 
-                            <Typography sx={{
+                            <Typography variant="body2" sx={{
                                 fontWeight: isSelected ? 900 : 500,
                                 color: "secondary.dark",
                                 cursor: "pointer"
