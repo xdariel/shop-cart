@@ -3,6 +3,7 @@ import {Box, Divider, Grid, Popover, Icon, Stack, styled, Typography, InputBase}
 import {useShop} from "@/context/ShopContext";
 import {CartItem} from "@/context/ShopContext/ShopContext";
 import {RemoveIcon} from "@/components/common/Icons";
+import {numberToPrice} from "@/utils";
 
 
 const ProductImage = styled("img")(() => ({
@@ -113,11 +114,11 @@ const CheckOutItem: React.FC<CheckOutItemProps> = ({item}) => {
                     </Grid>
                     <Grid item>
                         <Box sx={{textAlign: "end"}}>
-                            <Typography variant="h6" sx={{fontWeight: "bold"}}>{`$${item.product.price.toLocaleString("en-US")}`}</Typography>
+                            <Typography variant="h6" sx={{fontWeight: "bold"}}>{numberToPrice(item.product.price)}</Typography>
                             <Stack direction="row">
                                 <Typography variant="h6">Total: </Typography>
                                 <Typography variant="h6"
-                                            sx={{fontWeight: "bold", ml:1}}>{`$${(item.product.price * item.quantity).toLocaleString("en-US")}`}</Typography>
+                                            sx={{fontWeight: "bold", ml:1}}>{numberToPrice(item.product.price * item.quantity)}</Typography>
                             </Stack>
 
                         </Box>

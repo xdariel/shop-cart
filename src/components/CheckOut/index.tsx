@@ -6,6 +6,7 @@ import StyledButton from "@/components/common/StyledButton";
 import useProduct from "@/hooks/useProducts";
 import {Product} from "@/models/Product";
 import ProductItem from "@/components/ProductItem";
+import {numberToPrice} from "@/utils";
 
 
 const CheckOut: React.FC = () => {
@@ -56,7 +57,7 @@ const CheckOut: React.FC = () => {
                     <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{mb: 3}}>
                         <Typography sx={{fontWeight: "bold"}}>Total:</Typography>
                         <Typography sx={{fontWeight: "bold"}}
-                                    variant="h6">{`$${ cart && cart.length > 0 ? Number(cart.map(x => x.quantity * x.product.price).reduce((a, b) => a + b)).toLocaleString("en-EN"): 0}`}</Typography>
+                                    variant="h6">{ cart && cart.length > 0 ? numberToPrice(cart.map(x => x.quantity * x.product.price).reduce((a, b) => a + b)): 0}</Typography>
                     </Stack>
                     <StyledButton fullWidth variant={"contained"} sx={{mb:1}} >Proceed to Checkout</StyledButton>
                     <StyledButton fullWidth variant={"outlined"} >Continue shopping</StyledButton>
